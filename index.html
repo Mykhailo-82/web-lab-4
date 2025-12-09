@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Italiano Ristorante</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar navbar-expand-lg hero__nav fixed-top">
+      <div class="container">
+        <a class="navbar-brand hero__logo" href="#">Italiano</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#about">Про нас</a></li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Меню</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Галерея</a></li>
+            <li class="nav-item"><a class="nav-link" href="#booking">Бронювання</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacts">Контакти</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="hero__overlay">
+      <div class="container hero__content text-center">
+        <h1 class="display-3 fw-bold">Італійська кухня з душею</h1>
+        <h2 class="lead fs-3">Смак традицій у сучасній подачі</h2>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="about py-5">
+    <div class="container d-flex align-items-center flex-column flex-lg-row about__container">
+      <div class="about__image pe-lg-5 mb-4 mb-lg-0">
+        <img src="images/founder.jpg" class="img-fluid rounded" alt="Засновник" />
+      </div>
+      <div class="about__text">
+        <h2>Про ресторан</h2>
+        <p>
+          Наш ресторан бере свій початок з маленької сімейної тратторії у Неаполі. Засновник закладу присвятив життя пошуку
+          ідеального балансу між традиційними рецептами та сучасними гастрономічними тенденціями. Тут ми готуємо страви з
+          любов'ю, використовуючи лише свіжі продукти й дотримуючись справжніх італійських традицій.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="menu py-5">
+    <div class="container menu__container">
+      <h2 class="text-center mb-4">Меню</h2>
+      <ul class="nav nav-tabs justify-content-center menu__tabs" id="menuTabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active menu__tab-btn menu__tab-btn--green" data-bs-toggle="tab" data-bs-target="#snacks">Закуски</button></li>
+        <li class="nav-item"><button class="nav-link menu__tab-btn menu__tab-btn--white" data-bs-toggle="tab" data-bs-target="#main">Основні страви</button></li>
+        <li class="nav-item"><button class="nav-link menu__tab-btn menu__tab-btn--red" data-bs-toggle="tab" data-bs-target="#desserts">Десерти</button></li>
+      </ul>
+
+      <div class="tab-content mt-4">
+        <div class="tab-pane fade show active" id="snacks">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="menu__card card h-100">
+                <img src="images/tomatoes.jpg" class="card-img-top" alt="Помідори" />
+                <div class="card-body">
+                  <h5 class="card-title">Брускета з помідорами</h5>
+                  <p class="card-text">Хрусткий хліб із соковитими томатами та базиліком.</p>
+                  <div class="menu__price">120 грн</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="menu__card card h-100">
+                <img src="images/bread.jpg" class="card-img-top" alt="Хліб" />
+                <div class="card-body">
+                  <h5 class="card-title">Чіабата з оливковою олією</h5>
+                  <p class="card-text">Свіжа випічка з ароматною олією першого віджиму.</p>
+                  <div class="menu__price">90 грн</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="main">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="menu__card card h-100">
+                <img src="images/pizza.jpg" class="card-img-top" alt="Піца" />
+                <div class="card-body">
+                  <h5 class="card-title">Піца Маргарита</h5>
+                  <p class="card-text">Тонке тісто, моцарела та базилік — класика Неаполя.</p>
+                  <div class="menu__price">220 грн</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="menu__card card h-100">
+                <img src="images/meat-ball.jpg" class="card-img-top" alt="М'ясні кульки" />
+                <div class="card-body">
+                  <h5 class="card-title">Паста з м'ясними кульками</h5>
+                  <p class="card-text">Соковите м'ясо у томатному соусі за домашнім рецептом.</p>
+                  <div class="menu__price">260 грн</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="desserts">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="menu__card card h-100">
+                <img src="images/tiramisu.jpg" class="card-img-top" alt="Десерт" />
+                <div class="card-body">
+                  <h5 class="card-title">Тірамісу</h5>
+                  <p class="card-text">М'який десерт з кавовою ноткою та сиром маскарпоне.</p>
+                  <div class="menu__price">150 грн</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery py-5">
+    <div class="container gallery__container">
+      <h2 class="text-center mb-4">Галерея</h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col gallery__item"><img src="images/inside1.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 1"/></div>
+        <div class="col gallery__item"><img src="images/inside2.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 2"/></div>
+        <div class="col gallery__item"><img src="images/inside3.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 3"/></div>
+        <div class="col gallery__item d-none d-md-block"><img src="images/inside4.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 4"/></div>
+        <div class="col gallery__item d-none d-md-block"><img src="images/inside5.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 5"/></div>
+        <div class="col gallery__item d-none d-lg-block"><img src="images/inside6.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 6"/></div>
+        <div class="col gallery__item d-none d-lg-block"><img src="images/inside7.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 7"/></div>
+        <div class="col gallery__item d-none d-xl-block"><img src="images/inside8.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 8"/></div>
+        <div class="col gallery__item d-none d-xl-block"><img src="images/inside9.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 9"/></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="booking py-5 booking--decorated">
+    <div class="container booking__container">
+      <h2 class="text-center mb-4">Забронюйте столик</h2>
+      <form class="booking__form mx-auto bg-white p-4 rounded shadow-lg" style="max-width: 500px;">
+        <div class="mb-3">
+          <label class="form-label text-dark">Ім'я</label>
+          <input type="text" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-dark">Дата</label>
+          <input type="date" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-dark">Час</label>
+          <input type="time" class="form-control" required />
+        </div>
+        <div class="mb-4">
+          <label class="form-label text-dark">Кількість гостей</label>
+          <input type="number" class="form-control" min="1" max="10" value="2" required />
+        </div>
+        <button class="btn booking__btn w-100">Забронювати</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contacts" class="contacts py-5 contacts--decorated">
+    <div class="container contacts__container">
+      <h2 class="text-center mb-5">Зв'яжіться з нами</h2>
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6 contacts__info p-4">
+          <h4 class="mb-3 text-white">Наші дані</h4>
+          <p><strong><i class="fas fa-map-marker-alt"></i> Адреса:</strong> м. Київ, вул. Прикладна 12</p>
+          <p><strong><i class="fas fa-phone"></i> Телефон:</strong> +38 099 123 45 67</p>
+          <p><strong><i class="fas fa-envelope"></i> Email:</strong> info@italiano.ua</p>
+          <p><strong><i class="fas fa-clock"></i> Години роботи:</strong> Щодня з 11:00 до 23:00</p>
+        </div>
+        <div class="col-md-6 contacts__map">
+          <iframe class="w-100 rounded shadow" height="350" loading="lazy" src="https://maps.google.com/maps?q=kyiv&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer py-4">
+    <div class="container text-center">
+      <p class="mb-2">© 2025 Italiano Ristorante. Всі права захищені.</p>
+      <div class="footer__links">
+        <a href="#about" class="text-white mx-2">Про нас</a> |
+        <a href="#menu" class="text-white mx-2">Меню</a> |
+        <a href="#contacts" class="text-white mx-2">Контакти</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
