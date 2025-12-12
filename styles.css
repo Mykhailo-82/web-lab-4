@@ -235,7 +235,6 @@ button:not(.nav-link):not(.btn-close):hover, .btn:hover {
 .lightbox-arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.6);
   color: white;
   border: none;
@@ -256,7 +255,6 @@ button:not(.nav-link):not(.btn-close):hover, .btn:hover {
 .lightbox-arrow:hover {
   background: var(--italy-red);
   opacity: 1;
-  transform: translateY(-50%);
 }
 
 .lightbox-prev {
