@@ -7,7 +7,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -15,6 +20,16 @@
     <nav class="navbar navbar-expand-lg hero__nav fixed-top">
       <div class="container">
         <a class="navbar-brand hero__logo" href="#">Italiano</a>
+        <div class="d-flex align-items-center me-3">
+          <button class="btn btn-sm btn-outline-secondary cart-toggle-btn position-relative"
+            data-bs-toggle="modal" data-bs-target="#cartModal" title="Кошик">
+            <i class="fas fa-shopping-basket"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              id="cart-item-count">
+              0
+            </span>
+          </button>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,8 +60,10 @@
       <div class="about__text">
         <h2>Про ресторан</h2>
         <p>
-          Наш ресторан бере свій початок з маленької сімейної тратторії у Неаполі. Засновник закладу присвятив життя пошуку
-          ідеального балансу між традиційними рецептами та сучасними гастрономічними тенденціями. Тут ми готуємо страви з
+          Наш ресторан бере свій початок з маленької сімейної тратторії у Неаполі. Засновник закладу присвятив
+          життя пошуку
+          ідеального балансу між традиційними рецептами та сучасними гастрономічними тенденціями. Тут ми
+          готуємо страви з
           любов'ю, використовуючи лише свіжі продукти й дотримуючись справжніх італійських традицій.
         </p>
       </div>
@@ -56,120 +73,139 @@
   <section id="menu" class="menu py-5">
     <div class="container menu__container">
       <h2 class="text-center mb-4">Меню</h2>
-      <ul class="nav nav-tabs justify-content-center menu__tabs" id="menuTabs" role="tablist">
-        <li class="nav-item"><button class="nav-link active menu__tab-btn menu__tab-btn--green" data-bs-toggle="tab" data-bs-target="#snacks">Закуски</button></li>
-        <li class="nav-item"><button class="nav-link menu__tab-btn menu__tab-btn--white" data-bs-toggle="tab" data-bs-target="#main">Основні страви</button></li>
-        <li class="nav-item"><button class="nav-link menu__tab-btn menu__tab-btn--red" data-bs-toggle="tab" data-bs-target="#desserts">Десерти</button></li>
-      </ul>
-
-      <div class="tab-content mt-4">
-        <div class="tab-pane fade show active" id="snacks">
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="menu__card card h-100">
-                <img src="images/tomatoes.jpg" class="card-img-top" alt="Помідори" />
-                <div class="card-body">
-                  <h5 class="card-title">Брускета з помідорами</h5>
-                  <p class="card-text">Хрусткий хліб із соковитими томатами та базиліком.</p>
-                  <div class="menu__price">120 грн</div>
-                </div>
+      <div class="row mb-4 justify-content-center">
+        <div class="col-md-10">
+          <div class="d-flex flex-column flex-md-row gap-2 align-items-stretch">
+            <div class="flex-grow-1">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Пошук страви..." id="dish-search">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="menu__card card h-100">
-                <img src="images/bread.jpg" class="card-img-top" alt="Хліб" />
-                <div class="card-body">
-                  <h5 class="card-title">Чіабата з оливковою олією</h5>
-                  <p class="card-text">Свіжа випічка з ароматною олією першого віджиму.</p>
-                  <div class="menu__price">90 грн</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="main">
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="menu__card card h-100">
-                <img src="images/pizza.jpg" class="card-img-top" alt="Піца" />
-                <div class="card-body">
-                  <h5 class="card-title">Піца Маргарита</h5>
-                  <p class="card-text">Тонке тісто, моцарела та базилік — класика Неаполя.</p>
-                  <div class="menu__price">220 грн</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="menu__card card h-100">
-                <img src="images/meat-ball.jpg" class="card-img-top" alt="М'ясні кульки" />
-                <div class="card-body">
-                  <h5 class="card-title">Паста з м'ясними кульками</h5>
-                  <p class="card-text">Соковите м'ясо у томатному соусі за домашнім рецептом.</p>
-                  <div class="menu__price">260 грн</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="desserts">
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="menu__card card h-100">
-                <img src="images/tiramisu.jpg" class="card-img-top" alt="Десерт" />
-                <div class="card-body">
-                  <h5 class="card-title">Тірамісу</h5>
-                  <p class="card-text">М'який десерт з кавовою ноткою та сиром маскарпоне.</p>
-                  <div class="menu__price">150 грн</div>
-                </div>
-              </div>
+            <div class="d-flex gap-1 flex-wrap menu__filters-compact" id="dish-filters">
+              <button class="btn btn-sm btn-outline-secondary filter-btn" data-filter="vegetarian" title="Вегетаріанське">
+                <i class="fas fa-leaf"></i>
+              </button>
+              <button class="btn btn-sm btn-outline-secondary filter-btn" data-filter="spicy" title="Гостре">
+                <i class="fas fa-pepper-hot"></i>
+              </button>
+              <button class="btn btn-sm btn-outline-secondary filter-btn" data-filter="popular" title="Популярне">
+                <i class="fas fa-star"></i>
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <ul class="nav nav-tabs justify-content-center menu__tabs" id="menuTabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active menu__tab-btn menu__tab-btn--green"
+            data-category="all" data-bs-toggle="tab">Усі</button></li>
+        <li class="nav-item"><button class="nav-link menu__tab-btn menu__tab-btn--green" data-category="snacks"
+            data-bs-toggle="tab">Закуски</button></li>
+        <li class="nav-item"><button class="nav-link menu__tab-btn menu__tab-btn--white" data-category="main"
+            data-bs-toggle="tab">Основні</button></li>
+        <li class="nav-item"><button class="nav-link menu__tab-btn menu__tab-btn--red"
+            data-category="desserts" data-bs-toggle="tab">Десерти</button></li>
+        <li class="nav-item"><button class="nav-link menu__tab-btn menu__tab-btn--red"
+            data-category="drinks" data-bs-toggle="tab">Напої</button></li>
+      </ul>
+      <div class="tab-content mt-4">
+        <div class="row g-4" id="dishes-container">
+          </div>
+        <p class="text-center fs-5 text-muted mt-5 d-none" id="no-results-message">
+          <i class="fas fa-exclamation-circle"></i> На жаль, за вашим запитом страв не знайдено.
+        </p>
+      </div>
+      </div>
   </section>
 
   <section id="gallery" class="gallery py-5">
     <div class="container gallery__container">
       <h2 class="text-center mb-4">Галерея</h2>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col gallery__item"><img src="images/inside1.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 1"/></div>
-        <div class="col gallery__item"><img src="images/inside2.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 2"/></div>
-        <div class="col gallery__item"><img src="images/inside3.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 3"/></div>
-        <div class="col gallery__item d-none d-md-block"><img src="images/inside4.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 4"/></div>
-        <div class="col gallery__item d-none d-md-block"><img src="images/inside5.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 5"/></div>
-        <div class="col gallery__item d-none d-lg-block"><img src="images/inside6.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 6"/></div>
-        <div class="col gallery__item d-none d-lg-block"><img src="images/inside7.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 7"/></div>
-        <div class="col gallery__item d-none d-xl-block"><img src="images/inside8.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 8"/></div>
-        <div class="col gallery__item d-none d-xl-block"><img src="images/inside9.jpg" class="img-fluid rounded gallery__img" alt="Інтер'єр 9"/></div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="interior-gallery">
+        <div class="col gallery__item" data-src="images/inside1.jpg"><img src="images/inside1.jpg"
+            class="img-fluid rounded gallery__img" alt="Інтер'єр 1" /></div>
+        <div class="col gallery__item" data-src="images/inside2.jpg"><img src="images/inside2.jpg"
+            class="img-fluid rounded gallery__img" alt="Інтер'єр 2" /></div>
+        <div class="col gallery__item" data-src="images/inside3.jpg"><img src="images/inside3.jpg"
+            class="img-fluid rounded gallery__img" alt="Інтер'єр 3" /></div>
+        <div class="col gallery__item d-none d-md-block" data-src="images/inside4.jpg"><img src="images/inside4.jpg"
+            class="img-fluid rounded gallery__img" alt="Інтер'єр 4" /></div>
+        <div class="col gallery__item d-none d-md-block" data-src="images/inside5.jpg"><img src="images/inside5.jpg"
+            class="img-fluid rounded gallery__img" alt="Інтер'єр 5" /></div>
+        <div class="col gallery__item d-none d-lg-block" data-src="images/inside6.jpg"><img src="images/inside6.jpg"
+            class="img-fluid rounded gallery__img" alt="Інтер'єр 6" /></div>
+        <div class="col gallery__item d-none d-lg-block" data-src="images/inside7.jpg"><img src="images/inside7.jpg"
+            class="img-fluid rounded gallery__img" alt="Інтер'єр 7" /></div>
+        <div class="col gallery__item d-none d-xl-block" data-src="images/inside8.jpg"><img src="images/inside8.jpg"
+            class="img-fluid rounded gallery__img" alt="Інтер'єр 8" /></div>
+        <div class="col gallery__item d-none d-xl-block" data-src="images/inside9.jpg"><img src="images/inside9.jpg"
+            class="img-fluid rounded gallery__img" alt="Інтер'єр 9" /></div>
       </div>
     </div>
   </section>
 
   <section id="booking" class="booking py-5 booking--decorated">
     <div class="container booking__container">
-      <h2 class="text-center mb-4">Забронюйте столик</h2>
-      <form class="booking__form mx-auto bg-white p-4 rounded shadow-lg" style="max-width: 500px;">
-        <div class="mb-3">
-          <label class="form-label text-dark">Ім'я</label>
-          <input type="text" class="form-control" required />
+      <h2 class="text-center mb-4">Забронюйте столик та зробіть замовлення</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+          <form id="booking-form" class="booking__form bg-white p-4 rounded shadow-lg h-100">
+            <h4 class="text-dark mb-3">Інформація про бронювання</h4>
+            <div class="mb-3">
+              <label for="booking-name" class="form-label text-dark">Ім'я</label>
+              <input type="text" id="booking-name" class="form-control" required
+                pattern="[A-Za-zА-Яа-яЄєІіЏї\s]+" title="Ім'я має містити тільки букви" minlength="2" maxlength="50" />
+              <div class="invalid-feedback">Будь ласка, введіть коректне ім'я (мінімум 2 букви).</div>
+            </div>
+            <div class="mb-3">
+              <label for="booking-date" class="form-label text-dark">Дата</label>
+              <input type="text" id="booking-date" class="form-control flatpickr-date" required
+                placeholder="Оберіть дату" />
+              <div class="invalid-feedback">Оберіть коректну дату для бронювання.</div>
+            </div>
+            <div class="mb-3">
+              <label for="booking-time" class="form-label text-dark">Час</label>
+              <input type="text" id="booking-time" class="form-control flatpickr-time" required
+                placeholder="Оберіть час" />
+              <div class="invalid-feedback">Оберіть доступний час для бронювання.</div>
+            </div>
+            <div class="mb-3">
+              <label for="booking-guests" class="form-label text-dark">Кількість гостей</label>
+              <input type="number" id="booking-guests" class="form-control" min="1" max="10" value="2" required />
+              <div class="invalid-feedback">Введіть кількість гостей (від 1 до 10).</div>
+            </div>
+            <div class="mb-4">
+              <label for="booking-table" class="form-label text-dark">Оберіть столик</label>
+              <select id="booking-table" class="form-select" required>
+                <option value="">Оберіть столик</option>
+                <option value="1">Столик №1 (біля вікна, 2 місця)</option>
+                <option value="2">Столик №2 (у центрі залу, 4 місця)</option>
+                <option value="3">Столик №3 (VIP зона, 6 місць)</option>
+                <option value="4">Столик №4 (терраса, 4 місця)</option>
+                <option value="5">Столик №5 (куточок для двох, 2 місця)</option>
+              </select>
+              <div class="invalid-feedback">Оберіть столик для бронювання.</div>
+            </div>
+            <button type="submit" class="btn booking__btn w-100">Забронювати</button>
+          </form>
         </div>
-        <div class="mb-3">
-          <label class="form-label text-dark">Дата</label>
-          <input type="date" class="form-control" required />
+        <div class="col-lg-5 col-md-6">
+          <div class="booking__cart bg-white p-4 rounded shadow-lg h-100">
+            <h4 class="text-dark mb-3">Ваше замовлення</h4>
+            <div id="booking-cart-items" class="mb-3" style="max-height: 300px; overflow-y: auto;">
+              <p class="text-center text-muted" id="booking-empty-cart">Додайте страви з меню</p>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between mb-3">
+              <h5 class="mb-0 text-dark">Загальна сума:</h5>
+              <h5 class="mb-0 text-danger" id="booking-cart-total">0 грн</h5>
+            </div>
+            <button type="button" class="btn btn-success w-100" id="confirm-order-btn" disabled>
+              Підтвердити бронювання та замовлення
+            </button>
+          </div>
         </div>
-        <div class="mb-3">
-          <label class="form-label text-dark">Час</label>
-          <input type="time" class="form-control" required />
-        </div>
-        <div class="mb-4">
-          <label class="form-label text-dark">Кількість гостей</label>
-          <input type="number" class="form-control" min="1" max="10" value="2" required />
-        </div>
-        <button class="btn booking__btn w-100">Забронювати</button>
-      </form>
+      </div>
     </div>
   </section>
 
@@ -180,12 +216,13 @@
         <div class="col-md-6 contacts__info p-4">
           <h4 class="mb-3 text-white">Наші дані</h4>
           <p><strong><i class="fas fa-map-marker-alt"></i> Адреса:</strong> м. Київ, вул. Прикладна 12</p>
-          <p><strong><i class="fas fa-phone"></i> Телефон:</strong> +38 099 123 45 67</p>
-          <p><strong><i class="fas fa-envelope"></i> Email:</strong> info@italiano.ua</p>
+          <p><strong><i class="fas fa-phone"></i> Телефон:</strong> <a href="tel:+380991234567" class="text-white text-decoration-none contact-link">+38 099 123 45 67</a></p>
+          <p><strong><i class="fas fa-envelope"></i> Email:</strong> <a href="mailto:info@italiano.ua" class="text-white text-decoration-none contact-link">info@italiano.ua</a></p>
           <p><strong><i class="fas fa-clock"></i> Години роботи:</strong> Щодня з 11:00 до 23:00</p>
         </div>
         <div class="col-md-6 contacts__map">
-          <iframe class="w-100 rounded shadow" height="350" loading="lazy" src="https://maps.google.com/maps?q=kyiv&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+          <iframe class="w-100 rounded shadow" height="350" loading="lazy"
+            src="https://maps.google.com/maps?q=kyiv&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
       </div>
     </div>
@@ -202,6 +239,48 @@
     </div>
   </footer>
 
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Ваше замовлення</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="cart-items">
+            <p class="text-center text-muted" id="empty-cart-message">Кошик порожній.</p>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-0">Загальна сума:</h5>
+            <h5 class="mb-0 text-danger" id="cart-total">0 грн</h5>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Продовжити вибір</button>
+          <button type="button" class="btn btn-success" id="place-order-btn" disabled>Оформити замовлення</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content bg-dark">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex justify-content-center align-items-center position-relative" id="lightbox-backdrop">
+          <img src="" class="img-fluid lightbox-image" id="lightbox-image-display" alt="Повноекранне зображення">
+          <button class="lightbox-arrow lightbox-prev" title="Попереднє" id="lightbox-prev"><i
+              class="fas fa-chevron-left"></i></button>
+          <button class="lightbox-arrow lightbox-next" title="Наступне" id="lightbox-next"><i
+              class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="script.js"></script>
 </body>
 </html>

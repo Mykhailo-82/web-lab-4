@@ -20,10 +20,10 @@ h1, h2, h3, h4, .hero__logo {
   --dark-contrast: #222222;
 }
 
-button:not(.nav-link), .btn {
+button:not(.nav-link):not(.btn-close), .btn {
   transition: transform .2s, background-color .2s, box-shadow .2s;
 }
-button:not(.nav-link):hover, .btn:hover {
+button:not(.nav-link):not(.btn-close):hover, .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -56,12 +56,25 @@ button:not(.nav-link):hover, .btn:hover {
   font-size: 1.8rem;
 }
 
+.nav-item {
+  margin: 0 5px;
+}
 .hero__nav .nav-link {
   color: var(--dark-contrast) !important;
   font-weight: 500;
 }
 .hero__nav .nav-link:hover {
   color: var(--italy-red) !important;
+}
+
+.cart-toggle-btn {
+  border: 1px solid var(--italy-red);
+  color: var(--italy-red);
+  font-size: 1.2rem;
+}
+.cart-toggle-btn:hover {
+  background: var(--italy-red);
+  color: var(--italy-white);
 }
 
 /* --- ABOUT --- */
@@ -77,6 +90,33 @@ button:not(.nav-link):hover, .btn:hover {
 /* --- MENU --- */
 .menu {
   background: #f0f0f0;
+}
+
+.menu__filters-compact {
+  align-items: stretch;
+}
+
+.menu__filters-compact .filter-btn {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #ccc;
+  background-color: var(--italy-white);
+  color: var(--dark-contrast);
+  transition: all 0.3s;
+  font-size: 1rem;
+  min-width: 42px;
+}
+
+.menu__filters-compact .filter-btn:hover {
+  background-color: #f8f9fa;
+  border-color: var(--italy-red);
+  transform: translateY(0);
+}
+
+.menu__filters-compact .filter-btn.active {
+  background-color: var(--italy-red);
+  color: var(--italy-white);
+  border-color: var(--italy-red);
+  box-shadow: 0 2px 5px rgba(206, 43, 55, 0.4);
 }
 
 .menu__tabs .nav-link {
@@ -131,6 +171,11 @@ button:not(.nav-link):hover, .btn:hover {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+.menu__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .menu__card img {
@@ -144,7 +189,22 @@ button:not(.nav-link):hover, .btn:hover {
   font-size: 1.2rem;
 }
 
---- GALLERY ---
+.add-to-cart-btn {
+  background: var(--italy-green);
+  border-color: var(--italy-green);
+  color: var(--italy-white);
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background: #007a38;
+  border-color: #007a38;
+  color: var(--italy-white);
+}
+
+
+/* --- GALLERY --- */
 .gallery {
   background: #ffffff;
 }
@@ -159,6 +219,52 @@ button:not(.nav-link):hover, .btn:hover {
 .gallery__img:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lightbox-image {
+  max-height: 90vh;
+  max-width: 90vw;
+  cursor: default;
+}
+
+#lightbox-backdrop {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 1055;
+  transition: background-color 0.3s;
+  opacity: 0.8;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.lightbox-arrow:hover {
+  background: var(--italy-red);
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
 }
 
 .gallery .d-none.d-md-block {
@@ -197,7 +303,8 @@ button:not(.nav-link):hover, .btn:hover {
   font-weight: 700;
 }
 
-.booking__form label {
+.booking__form label,
+.booking__cart h4 {
   color: #333;
   font-weight: 500;
 }
@@ -214,6 +321,57 @@ button:not(.nav-link):hover, .btn:hover {
 .booking__btn:hover {
   background: #a5202b;
   transform: translateY(-2px);
+}
+
+.flatpickr-time input {
+  height: 38px !important;
+  line-height: 38px !important;
+}
+
+#booking-time {
+  height: 38px;
+}
+
+.flatpickr-calendar {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
+    background: var(--italy-red) !important;
+    border-color: var(--italy-red) !important;
+}
+.flatpickr-day.today:not(.selected) {
+    border-color: var(--italy-green);
+    color: var(--italy-green);
+}
+
+.booking__cart {
+  display: flex;
+  flex-direction: column;
+}
+
+#booking-cart-items {
+  flex-grow: 1;
+}
+
+#confirm-order-btn {
+  background: var(--italy-green);
+  border: none;
+  font-weight: 700;
+  padding: 10px 0;
+  letter-spacing: 1px;
+}
+
+#confirm-order-btn:hover {
+  background: #007a38;
+  transform: translateY(-2px);
+}
+
+#confirm-order-btn:disabled {
+  background: #6c757d;
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* --- CONTACTS --- */
@@ -241,6 +399,16 @@ button:not(.nav-link):hover, .btn:hover {
 
 .contacts__info strong {
   font-weight: 700;
+}
+
+.contact-link {
+  text-decoration: underline;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.contact-link:hover {
+  color: var(--italy-green) !important;
+  text-shadow: 0 0 8px rgba(0, 146, 70, 0.6);
 }
 
 /* --- FOOTER --- */

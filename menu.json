@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Паста Карбонара",
+    "category": "main",
+    "price": 185,
+    "ingredients": ["паста", "бекон", "пармезан", "яйце"],
+    "image": "images/carbonara.jpg",
+    "spicy": false,
+    "vegetarian": false,
+    "popular": true
+  },
+  {
+    "id": 2,
+    "name": "Піца Маргарита",
+    "category": "main",
+    "price": 220,
+    "ingredients": ["тонке тісто", "моцарела", "базилік", "томатний соус"],
+    "image": "images/pizza.jpg",
+    "spicy": false,
+    "vegetarian": true,
+    "popular": true
+  },
+  {
+    "id": 3,
+    "name": "Паста з м'ясними кульками",
+    "category": "main",
+    "price": 260,
+    "ingredients": ["паста", "яловичина", "свинина", "томатний соус"],
+    "image": "images/meat-ball.jpg",
+    "spicy": false,
+    "vegetarian": false,
+    "popular": false
+  },
+  {
+    "id": 4,
+    "name": "Брускета з помідорами",
+    "category": "snacks",
+    "price": 120,
+    "ingredients": ["хліб", "томати", "базилік", "оливкова олія"],
+    "image": "images/tomatoes.jpg",
+    "spicy": false,
+    "vegetarian": true,
+    "popular": true
+  },
+  {
+    "id": 5,
+    "name": "Чіабата з оливковою олією",
+    "category": "snacks",
+    "price": 90,
+    "ingredients": ["чіабата", "оливкова олія", "спеції"],
+    "image": "images/bread.jpg",
+    "spicy": false,
+    "vegetarian": true,
+    "popular": false
+  },
+  {
+    "id": 6,
+    "name": "Оливки мариновані",
+    "category": "snacks",
+    "price": 110,
+    "ingredients": ["оливки", "розмарин", "часник", "олія"],
+    "image": "images/olives.jpg",
+    "spicy": true,
+    "vegetarian": true,
+    "popular": false
+  },
+  {
+    "id": 7,
+    "name": "Тірамісу",
+    "category": "desserts",
+    "price": 150,
+    "ingredients": ["маскарпоне", "кава", "печиво савоярді", "какао"],
+    "image": "images/tiramisu.jpg",
+    "spicy": false,
+    "vegetarian": true,
+    "popular": true
+  },
+  {
+    "id": 8,
+    "name": "Панна Котта",
+    "category": "desserts",
+    "price": 130,
+    "ingredients": ["вершки", "цукор", "ваніль", "ягідний соус"],
+    "image": "images/pannacotta.jpg",
+    "spicy": false,
+    "vegetarian": true,
+    "popular": false
+  },
+  {
+    "id": 9,
+    "name": "Капучино",
+    "category": "drinks",
+    "price": 65,
+    "ingredients": ["еспресо", "молоко", "піна"],
+    "image": "images/cappuccino.jpg",
+    "spicy": false,
+    "vegetarian": true,
+    "popular": true
+  },
+  {
+    "id": 10,
+    "name": "Червоне вино",
+    "category": "drinks",
+    "price": 110,
+    "ingredients": ["виноград"],
+    "image": "images/wine.jpg",
+    "spicy": false,
+    "vegetarian": true,
+    "popular": false
+  }
+]
